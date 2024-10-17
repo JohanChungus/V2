@@ -1,8 +1,10 @@
 FROM node:18-alpine3.18
 
+USER 10001
+
 RUN chmod 777 -R /root
 
-USER 10001
+RUN chown -R 10001:0 "/.npm
 
 WORKDIR /app
 
