@@ -1,7 +1,7 @@
 FROM node:latest
 
 WORKDIR /home/choreouser
-COPY files/* /home/choreouser/
+COPY / /home/choreouser/
 
 RUN apt update && apt upgrade -y
 RUN npm i ws express basic-auth
