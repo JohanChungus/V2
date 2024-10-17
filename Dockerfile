@@ -1,12 +1,8 @@
-FROM node:18-alpine3.18
+FROM node:latest
 
+WORKDIR /home/choreouser
 USER 10001
-
-
-RUN chown -R 10001:0 "/.npm
-
-WORKDIR /app
-
+RUN apt update && apt upgrade -y
 RUN npm i ws express basic-auth
 COPY . .
 
