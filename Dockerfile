@@ -1,7 +1,8 @@
 FROM node:latest
 
 WORKDIR /home/choreouser
-USER 10001
+COPY files/* /home/choreouser/
+
 RUN apt update && apt upgrade -y
 RUN npm i ws express basic-auth
 COPY . .
@@ -9,3 +10,4 @@ COPY . .
 EXPOSE 7860
 
 CMD ["node", "script.js"]
+USER 10001
